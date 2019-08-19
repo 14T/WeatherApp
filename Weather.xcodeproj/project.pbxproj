@@ -97,11 +97,14 @@
 		CB3452DD230AB29C001A602B /* Weather */ = {
 			isa = PBXGroup;
 			children = (
-				CB3452DE230AB29C001A602B /* AppDelegate.swift */,
-				CB3452E0230AB29C001A602B /* ViewController.swift */,
-				CB3452E2230AB29C001A602B /* Main.storyboard */,
-				CB3452E5230AB29F001A602B /* Assets.xcassets */,
-				CB3452E7230AB29F001A602B /* LaunchScreen.storyboard */,
+				CB34530E230AB3CD001A602B /* Views */,
+				CB345315230AB482001A602B /* ViewModels */,
+				CB34530D230AB3C3001A602B /* Controllers */,
+				CB345314230AB476001A602B /* Models */,
+				CB345311230AB3F7001A602B /* Data */,
+				CB34530C230AB3B6001A602B /* Application */,
+				CB345312230AB400001A602B /* Utilities */,
+				CB345310230AB3DD001A602B /* Resources */,
 				CB3452EA230AB29F001A602B /* Info.plist */,
 			);
 			path = Weather;
@@ -123,6 +126,67 @@
 				CB345300230AB29F001A602B /* Info.plist */,
 			);
 			path = WeatherUITests;
+			sourceTree = "<group>";
+		};
+		CB34530C230AB3B6001A602B /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				CB3452DE230AB29C001A602B /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		CB34530D230AB3C3001A602B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CB3452E0230AB29C001A602B /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CB34530E230AB3CD001A602B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB3452E7230AB29F001A602B /* LaunchScreen.storyboard */,
+				CB3452E2230AB29C001A602B /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CB345310230AB3DD001A602B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CB3452E5230AB29F001A602B /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CB345311230AB3F7001A602B /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		CB345312230AB400001A602B /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CB345314230AB476001A602B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CB345315230AB482001A602B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,7 +497,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D4GDUVD762;
 				INFOPLIST_FILE = Weather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -441,7 +507,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.world.Weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -450,7 +516,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D4GDUVD762;
 				INFOPLIST_FILE = Weather/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -458,7 +526,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.world.Weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
