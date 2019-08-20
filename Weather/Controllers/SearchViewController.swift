@@ -15,15 +15,20 @@ class SearchViewController: UIViewController {
     @IBOutlet var searchFooter: UIView!
     
     let searchController = UISearchController(searchResultsController: nil)
+    let service = SearchCityService()
 
-    var cities = [SearchResultModel]()
-    var filteredCities = [SearchResultModel]()
+    var viewModel : SearchViewModel? {
+        didSet{
+            updateViews()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupTableView()
         setupNavigationBar()
         setupSearchController()
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -33,7 +38,15 @@ class SearchViewController: UIViewController {
         }
     }
     
-
+    private func setupTableView(){
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.register(UINib(nibName: String(describing: CityTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: CityTableViewCell.self))
+        tableView.keyboardDismissMode = .interactive
+    }
     private func setupNavigationBar(){
         self.title = "Cities"
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -54,9 +67,14 @@ class SearchViewController: UIViewController {
         tableView.tableFooterView = searchFooter
     }
 
-
+    func updateViews() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
 }
 
+// MARK: - SearchController delegates
 extension SearchViewController: UISearchControllerDelegate{
     func didPresentSearchController(_ searchController: UISearchController) {
         DispatchQueue.main.async {
@@ -89,12 +107,40 @@ extension SearchViewController {
             return
         }
         
-        let service = SearchCityService()
-        
         service.searchCity(query: query) { (result, error) in
-            
-            debugPrint("SearchCityService : \(result), error : \(error)")
+            guard let result = result else {
+                debugPrint("SearchCityService: EMPTY")
+                return
+            }
+            self.viewModel = SearchViewModel(values: result)
+            debugPrint("SearchCityService : \(result), error : \(error ?? "")")
         }
     }
+}
+
+
+extension SearchViewController: UITableViewDelegate {
+
+
+}
+
+extension SearchViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.cities.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: CityTableViewCell.self), for: indexPath) as? CityTableViewCell else {
+            precondition(false, "CityTableViewCell not available")
+        }
+        cell.viewModel = viewModel?.cities[indexPath.row]
+        return cell
+        
+    }
+    
+    
+    
 }
 

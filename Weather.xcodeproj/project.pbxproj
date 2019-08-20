@@ -34,6 +34,10 @@
 		CB34534C230AF078001A602B /* RegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB345345230AF078001A602B /* RegionModel.swift */; };
 		CB345351230AFD19001A602B /* SearchCityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB345350230AFD19001A602B /* SearchCityService.swift */; };
 		CB345353230AFD53001A602B /* SearchCityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB345352230AFD53001A602B /* SearchCityRequest.swift */; };
+		CB34535D230B9E2A001A602B /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34535B230B9E2A001A602B /* CityTableViewCell.swift */; };
+		CB34535E230B9E2A001A602B /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB34535C230B9E2A001A602B /* CityTableViewCell.xib */; };
+		CB345360230BA15B001A602B /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34535F230BA15B001A602B /* CityViewModel.swift */; };
+		CB34536B230BB50E001A602B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34536A230BB50E001A602B /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +91,10 @@
 		CB345345230AF078001A602B /* RegionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionModel.swift; sourceTree = "<group>"; };
 		CB345350230AFD19001A602B /* SearchCityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityService.swift; sourceTree = "<group>"; };
 		CB345352230AFD53001A602B /* SearchCityRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityRequest.swift; sourceTree = "<group>"; };
+		CB34535B230B9E2A001A602B /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		CB34535C230B9E2A001A602B /* CityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
+		CB34535F230BA15B001A602B /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
+		CB34536A230BB50E001A602B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +197,8 @@
 			children = (
 				CB3452E7230AB29F001A602B /* LaunchScreen.storyboard */,
 				CB3452E2230AB29C001A602B /* Main.storyboard */,
+				CB34535B230B9E2A001A602B /* CityTableViewCell.swift */,
+				CB34535C230B9E2A001A602B /* CityTableViewCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -229,6 +239,8 @@
 		CB345315230AB482001A602B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				CB34535F230BA15B001A602B /* CityViewModel.swift */,
+				CB34536A230BB50E001A602B /* SearchViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -427,6 +439,7 @@
 			files = (
 				CB3452E9230AB29F001A602B /* LaunchScreen.storyboard in Resources */,
 				CB3452E6230AB29F001A602B /* Assets.xcassets in Resources */,
+				CB34535E230B9E2A001A602B /* CityTableViewCell.xib in Resources */,
 				CB3452E4230AB29C001A602B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,6 +476,7 @@
 				CB345348230AF078001A602B /* SearchBaseModel.swift in Sources */,
 				CB34534A230AF078001A602B /* WeatherUrlModel.swift in Sources */,
 				CB34534B230AF078001A602B /* CountryModel.swift in Sources */,
+				CB34535D230B9E2A001A602B /* CityTableViewCell.swift in Sources */,
 				CB345337230AE961001A602B /* RequestProtocol.swift in Sources */,
 				CB3452E1230AB29C001A602B /* SearchViewController.swift in Sources */,
 				CB345331230AE961001A602B /* JSONParameterEncoder.swift in Sources */,
@@ -470,7 +484,9 @@
 				CB345333230AE961001A602B /* HTTPMethod.swift in Sources */,
 				CB345336230AE961001A602B /* ResponseProtocol.swift in Sources */,
 				CB34532F230AE960001A602B /* ParameterEncoder.swift in Sources */,
+				CB345360230BA15B001A602B /* CityViewModel.swift in Sources */,
 				CB345330230AE960001A602B /* URLParameterEncoder.swift in Sources */,
+				CB34536B230BB50E001A602B /* SearchViewModel.swift in Sources */,
 				CB345349230AF078001A602B /* SearchResultModel.swift in Sources */,
 				CB34533A230AED07001A602B /* StoryboardInstantiable.swift in Sources */,
 				CB3452DF230AB29C001A602B /* AppDelegate.swift in Sources */,
