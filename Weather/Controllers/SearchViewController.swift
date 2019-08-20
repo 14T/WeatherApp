@@ -29,13 +29,15 @@ class SearchViewController: UIViewController {
         setupTableView()
         setupNavigationBar()
         setupSearchController()
+        searchCity(query: "Singapore")
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-            self.searchController.isActive = true
-        }
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+//            self.searchController.isActive = true
+//        }
+        
     }
     
     private func setupTableView(){
@@ -48,14 +50,16 @@ class SearchViewController: UIViewController {
         tableView.keyboardDismissMode = .interactive
     }
     private func setupNavigationBar(){
-        self.title = "Cities"
+        self.title = "Search Cities"
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
     }
     private func setupSearchController(){
         // Setup the Search Controller
         searchController.searchResultsUpdater = self
         searchController.delegate = self
-        searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Type here to Search Cities ..."
         
         navigationItem.searchController = searchController
@@ -76,11 +80,11 @@ class SearchViewController: UIViewController {
 
 // MARK: - SearchController delegates
 extension SearchViewController: UISearchControllerDelegate{
-    func didPresentSearchController(_ searchController: UISearchController) {
-        DispatchQueue.main.async {
-            searchController.searchBar.becomeFirstResponder()
-        }
-    }
+//    func didPresentSearchController(_ searchController: UISearchController) {
+//        DispatchQueue.main.async {
+//            searchController.searchBar.becomeFirstResponder()
+//        }
+//    }
 }
 
 extension SearchViewController: UISearchBarDelegate {
@@ -121,7 +125,13 @@ extension SearchViewController {
 
 extension SearchViewController: UITableViewDelegate {
 
-
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let detailViewController = CityDetailViewController.instantiate() else {
+            return
+        }
+        navigationController?.pushViewController(detailViewController, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 extension SearchViewController: UITableViewDataSource {
