@@ -51,6 +51,11 @@
 		CBA1216D230BF0BA00068908 /* CityDetailClimateAveragesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA12162230BF0BA00068908 /* CityDetailClimateAveragesModel.swift */; };
 		CBA1216E230BF0BA00068908 /* CityDetailMonthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA12163230BF0BA00068908 /* CityDetailMonthModel.swift */; };
 		CBA1216F230BF0BA00068908 /* CityDetailWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA12164230BF0BA00068908 /* CityDetailWeatherModel.swift */; };
+		CBA12171230BF76200068908 /* CityDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA12170230BF76200068908 /* CityDetailViewModel.swift */; };
+		CBA12174230BF8E300068908 /* CityDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA12173230BF8E300068908 /* CityDetailService.swift */; };
+		CBA12176230BF8F400068908 /* CityDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA12175230BF8F400068908 /* CityDetailRequest.swift */; };
+		CBA12178230C050D00068908 /* WeatherIconService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA12177230C050D00068908 /* WeatherIconService.swift */; };
+		CBA1217A230C051C00068908 /* ImageDownloadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA12179230C051C00068908 /* ImageDownloadRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +126,11 @@
 		CBA12162230BF0BA00068908 /* CityDetailClimateAveragesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDetailClimateAveragesModel.swift; sourceTree = "<group>"; };
 		CBA12163230BF0BA00068908 /* CityDetailMonthModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDetailMonthModel.swift; sourceTree = "<group>"; };
 		CBA12164230BF0BA00068908 /* CityDetailWeatherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDetailWeatherModel.swift; sourceTree = "<group>"; };
+		CBA12170230BF76200068908 /* CityDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailViewModel.swift; sourceTree = "<group>"; };
+		CBA12173230BF8E300068908 /* CityDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailService.swift; sourceTree = "<group>"; };
+		CBA12175230BF8F400068908 /* CityDetailRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailRequest.swift; sourceTree = "<group>"; };
+		CBA12177230C050D00068908 /* WeatherIconService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIconService.swift; sourceTree = "<group>"; };
+		CBA12179230C051C00068908 /* ImageDownloadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +252,7 @@
 		CB345311230AB3F7001A602B /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CBA12172230BF8C800068908 /* CityDetail */,
 				CB34534D230AFCC3001A602B /* Search */,
 			);
 			path = Data;
@@ -270,6 +281,7 @@
 			children = (
 				CB34535F230BA15B001A602B /* CityViewModel.swift */,
 				CB34536A230BB50E001A602B /* SearchViewModel.swift */,
+				CBA12170230BF76200068908 /* CityDetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -378,6 +390,17 @@
 				CBA1215B230BF0B900068908 /* CityDetailWeatherIconUrl.swift */,
 			);
 			path = CityDetailModels;
+			sourceTree = "<group>";
+		};
+		CBA12172230BF8C800068908 /* CityDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CBA12173230BF8E300068908 /* CityDetailService.swift */,
+				CBA12175230BF8F400068908 /* CityDetailRequest.swift */,
+				CBA12177230C050D00068908 /* WeatherIconService.swift */,
+				CBA12179230C051C00068908 /* ImageDownloadRequest.swift */,
+			);
+			path = CityDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -522,19 +545,23 @@
 				CB34534C230AF078001A602B /* RegionModel.swift in Sources */,
 				CBA1216A230BF0BA00068908 /* CityDetailBaseModel.swift in Sources */,
 				CBA12169230BF0BA00068908 /* CityDetailAstronomyModel.swift in Sources */,
+				CBA1217A230C051C00068908 /* ImageDownloadRequest.swift in Sources */,
 				CB34532E230AE960001A602B /* NetworkManager.swift in Sources */,
 				CB345347230AF078001A602B /* AreaNameModel.swift in Sources */,
+				CBA12178230C050D00068908 /* WeatherIconService.swift in Sources */,
 				CB345351230AFD19001A602B /* SearchCityService.swift in Sources */,
 				CBA1216D230BF0BA00068908 /* CityDetailClimateAveragesModel.swift in Sources */,
 				CBA12158230BED3B00068908 /* CityDetailViewController.swift in Sources */,
 				CB345348230AF078001A602B /* SearchBaseModel.swift in Sources */,
 				CB34534A230AF078001A602B /* WeatherUrlModel.swift in Sources */,
+				CBA12171230BF76200068908 /* CityDetailViewModel.swift in Sources */,
 				CB34534B230AF078001A602B /* CountryModel.swift in Sources */,
 				CB34535D230B9E2A001A602B /* CityTableViewCell.swift in Sources */,
 				CB345337230AE961001A602B /* RequestProtocol.swift in Sources */,
 				CB3452E1230AB29C001A602B /* SearchViewController.swift in Sources */,
 				CBA1216E230BF0BA00068908 /* CityDetailMonthModel.swift in Sources */,
 				CB345331230AE961001A602B /* JSONParameterEncoder.swift in Sources */,
+				CBA12176230BF8F400068908 /* CityDetailRequest.swift in Sources */,
 				CB345334230AE961001A602B /* Router.swift in Sources */,
 				CBA12168230BF0BA00068908 /* CityDetailCurrentConditionModel.swift in Sources */,
 				CBA1216F230BF0BA00068908 /* CityDetailWeatherModel.swift in Sources */,
@@ -543,6 +570,7 @@
 				CBA12165230BF0BA00068908 /* CityDetailHourlyModel.swift in Sources */,
 				CBA12166230BF0BA00068908 /* CityDetailWeatherIconUrl.swift in Sources */,
 				CB345336230AE961001A602B /* ResponseProtocol.swift in Sources */,
+				CBA12174230BF8E300068908 /* CityDetailService.swift in Sources */,
 				CB34532F230AE960001A602B /* ParameterEncoder.swift in Sources */,
 				CB345360230BA15B001A602B /* CityViewModel.swift in Sources */,
 				CB345330230AE960001A602B /* URLParameterEncoder.swift in Sources */,

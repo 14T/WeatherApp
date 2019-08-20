@@ -19,6 +19,7 @@ struct CityViewModel {
         self.city = value.areaName?.first?.value
         self.region = value.region?.first?.value
         self.country = value.country?.first?.value
+
     }
 
 }

@@ -129,6 +129,11 @@ extension SearchViewController: UITableViewDelegate {
         guard let detailViewController = CityDetailViewController.instantiate() else {
             return
         }
+        detailViewController.title = viewModel?.cities[indexPath.row].city
+        
+        if let cityViewModel = viewModel?.cities[indexPath.row] {
+            detailViewController.viewModel = CityDetailViewModel(value: cityViewModel)
+        }
         navigationController?.pushViewController(detailViewController, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }

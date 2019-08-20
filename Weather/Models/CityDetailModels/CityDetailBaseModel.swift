@@ -7,7 +7,7 @@
 
 import Foundation
 struct CityDetailBaseModel : Codable {
-	let data : Data?
+	let data : CityDetailDataModel?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -16,7 +16,7 @@ struct CityDetailBaseModel : Codable {
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		data = try values.decodeIfPresent(Data.self, forKey: .data)
+		data = try values.decodeIfPresent(CityDetailDataModel.self, forKey: .data)
 	}
 
 }
