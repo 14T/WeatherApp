@@ -5,14 +5,14 @@
 //
 
 import Foundation
-struct SearchResult : Codable {
-	let areaName : [AreaName]?
-	let country : [Country]?
-	let region : [Region]?
+struct SearchResultModel : Codable {
+	let areaName : [AreaNameModel]?
+	let country : [CountryModel]?
+	let region : [RegionModel]?
 	let latitude : String?
 	let longitude : String?
 	let population : String?
-	let weatherUrl : [WeatherUrl]?
+	let weatherUrl : [WeatherUrlModel]?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -27,13 +27,13 @@ struct SearchResult : Codable {
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		areaName = try values.decodeIfPresent([AreaName].self, forKey: .areaName)
-		country = try values.decodeIfPresent([Country].self, forKey: .country)
-		region = try values.decodeIfPresent([Region].self, forKey: .region)
+		areaName = try values.decodeIfPresent([AreaNameModel].self, forKey: .areaName)
+		country = try values.decodeIfPresent([CountryModel].self, forKey: .country)
+		region = try values.decodeIfPresent([RegionModel].self, forKey: .region)
 		latitude = try values.decodeIfPresent(String.self, forKey: .latitude)
 		longitude = try values.decodeIfPresent(String.self, forKey: .longitude)
 		population = try values.decodeIfPresent(String.self, forKey: .population)
-		weatherUrl = try values.decodeIfPresent([WeatherUrl].self, forKey: .weatherUrl)
+		weatherUrl = try values.decodeIfPresent([WeatherUrlModel].self, forKey: .weatherUrl)
 	}
 
 }

@@ -5,7 +5,7 @@
 //
 
 import Foundation
-struct Country : Codable {
+struct AreaNameModel : Codable {
 	let value : String?
 
 	enum CodingKeys: String, CodingKey {

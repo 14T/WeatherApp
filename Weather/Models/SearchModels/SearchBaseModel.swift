@@ -5,17 +5,17 @@
 //
 
 import Foundation
-struct AreaName : Codable {
-	let value : String?
+struct SearchBaseModel : Codable {
+	let search_api : SearchApiModel?
 
 	enum CodingKeys: String, CodingKey {
 
-		case value = "value"
+		case search_api = "search_api"
 	}
 
 	init(from decoder: Decoder) throws {
 		let values = try decoder.container(keyedBy: CodingKeys.self)
-		value = try values.decodeIfPresent(String.self, forKey: .value)
+		search_api = try values.decodeIfPresent(SearchApiModel.self, forKey: .search_api)
 	}
 
 }

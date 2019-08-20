@@ -25,13 +25,15 @@
 		CB345337230AE961001A602B /* RequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34532C230AE960001A602B /* RequestProtocol.swift */; };
 		CB34533A230AED07001A602B /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB345339230AED07001A602B /* StoryboardInstantiable.swift */; };
 		CB34533D230AED66001A602B /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34533C230AED66001A602B /* Observable.swift */; };
-		CB345346230AF078001A602B /* SearchApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34533F230AF078001A602B /* SearchApi.swift */; };
-		CB345347230AF078001A602B /* AreaName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB345340230AF078001A602B /* AreaName.swift */; };
-		CB345348230AF078001A602B /* SearchBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB345341230AF078001A602B /* SearchBase.swift */; };
-		CB345349230AF078001A602B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB345342230AF078001A602B /* Result.swift */; };
-		CB34534A230AF078001A602B /* WeatherUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB345343230AF078001A602B /* WeatherUrl.swift */; };
-		CB34534B230AF078001A602B /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB345344230AF078001A602B /* Country.swift */; };
-		CB34534C230AF078001A602B /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB345345230AF078001A602B /* Region.swift */; };
+		CB345346230AF078001A602B /* SearchApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34533F230AF078001A602B /* SearchApiModel.swift */; };
+		CB345347230AF078001A602B /* AreaNameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB345340230AF078001A602B /* AreaNameModel.swift */; };
+		CB345348230AF078001A602B /* SearchBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB345341230AF078001A602B /* SearchBaseModel.swift */; };
+		CB345349230AF078001A602B /* SearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB345342230AF078001A602B /* SearchResultModel.swift */; };
+		CB34534A230AF078001A602B /* WeatherUrlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB345343230AF078001A602B /* WeatherUrlModel.swift */; };
+		CB34534B230AF078001A602B /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB345344230AF078001A602B /* CountryModel.swift */; };
+		CB34534C230AF078001A602B /* RegionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB345345230AF078001A602B /* RegionModel.swift */; };
+		CB345351230AFD19001A602B /* SearchCityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB345350230AFD19001A602B /* SearchCityService.swift */; };
+		CB345353230AFD53001A602B /* SearchCityRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB345352230AFD53001A602B /* SearchCityRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,13 +78,15 @@
 		CB34532C230AE960001A602B /* RequestProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestProtocol.swift; sourceTree = "<group>"; };
 		CB345339230AED07001A602B /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		CB34533C230AED66001A602B /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
-		CB34533F230AF078001A602B /* SearchApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchApi.swift; sourceTree = "<group>"; };
-		CB345340230AF078001A602B /* AreaName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaName.swift; sourceTree = "<group>"; };
-		CB345341230AF078001A602B /* SearchBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBase.swift; sourceTree = "<group>"; };
-		CB345342230AF078001A602B /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
-		CB345343230AF078001A602B /* WeatherUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherUrl.swift; sourceTree = "<group>"; };
-		CB345344230AF078001A602B /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
-		CB345345230AF078001A602B /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		CB34533F230AF078001A602B /* SearchApiModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchApiModel.swift; sourceTree = "<group>"; };
+		CB345340230AF078001A602B /* AreaNameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AreaNameModel.swift; sourceTree = "<group>"; };
+		CB345341230AF078001A602B /* SearchBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBaseModel.swift; sourceTree = "<group>"; };
+		CB345342230AF078001A602B /* SearchResultModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultModel.swift; sourceTree = "<group>"; };
+		CB345343230AF078001A602B /* WeatherUrlModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherUrlModel.swift; sourceTree = "<group>"; };
+		CB345344230AF078001A602B /* CountryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
+		CB345345230AF078001A602B /* RegionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionModel.swift; sourceTree = "<group>"; };
+		CB345350230AFD19001A602B /* SearchCityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityService.swift; sourceTree = "<group>"; };
+		CB345352230AFD53001A602B /* SearchCityRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCityRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +204,7 @@
 		CB345311230AB3F7001A602B /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				CB34534D230AFCC3001A602B /* Search */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -280,15 +285,40 @@
 		CB34533E230AF078001A602B /* SearchModels */ = {
 			isa = PBXGroup;
 			children = (
-				CB34533F230AF078001A602B /* SearchApi.swift */,
-				CB345340230AF078001A602B /* AreaName.swift */,
-				CB345341230AF078001A602B /* SearchBase.swift */,
-				CB345342230AF078001A602B /* Result.swift */,
-				CB345343230AF078001A602B /* WeatherUrl.swift */,
-				CB345344230AF078001A602B /* Country.swift */,
-				CB345345230AF078001A602B /* Region.swift */,
+				CB34533F230AF078001A602B /* SearchApiModel.swift */,
+				CB345340230AF078001A602B /* AreaNameModel.swift */,
+				CB345341230AF078001A602B /* SearchBaseModel.swift */,
+				CB345342230AF078001A602B /* SearchResultModel.swift */,
+				CB345343230AF078001A602B /* WeatherUrlModel.swift */,
+				CB345344230AF078001A602B /* CountryModel.swift */,
+				CB345345230AF078001A602B /* RegionModel.swift */,
 			);
 			path = SearchModels;
+			sourceTree = "<group>";
+		};
+		CB34534D230AFCC3001A602B /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				CB34534F230AFCE1001A602B /* Service */,
+				CB34534E230AFCD2001A602B /* Request */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		CB34534E230AFCD2001A602B /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				CB345352230AFD53001A602B /* SearchCityRequest.swift */,
+			);
+			path = Request;
+			sourceTree = "<group>";
+		};
+		CB34534F230AFCE1001A602B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				CB345350230AFD19001A602B /* SearchCityService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -422,15 +452,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB345346230AF078001A602B /* SearchApi.swift in Sources */,
+				CB345353230AFD53001A602B /* SearchCityRequest.swift in Sources */,
+				CB345346230AF078001A602B /* SearchApiModel.swift in Sources */,
 				CB34533D230AED66001A602B /* Observable.swift in Sources */,
 				CB345332230AE961001A602B /* HTTPTask.swift in Sources */,
-				CB34534C230AF078001A602B /* Region.swift in Sources */,
+				CB34534C230AF078001A602B /* RegionModel.swift in Sources */,
 				CB34532E230AE960001A602B /* NetworkManager.swift in Sources */,
-				CB345347230AF078001A602B /* AreaName.swift in Sources */,
-				CB345348230AF078001A602B /* SearchBase.swift in Sources */,
-				CB34534A230AF078001A602B /* WeatherUrl.swift in Sources */,
-				CB34534B230AF078001A602B /* Country.swift in Sources */,
+				CB345347230AF078001A602B /* AreaNameModel.swift in Sources */,
+				CB345351230AFD19001A602B /* SearchCityService.swift in Sources */,
+				CB345348230AF078001A602B /* SearchBaseModel.swift in Sources */,
+				CB34534A230AF078001A602B /* WeatherUrlModel.swift in Sources */,
+				CB34534B230AF078001A602B /* CountryModel.swift in Sources */,
 				CB345337230AE961001A602B /* RequestProtocol.swift in Sources */,
 				CB3452E1230AB29C001A602B /* SearchViewController.swift in Sources */,
 				CB345331230AE961001A602B /* JSONParameterEncoder.swift in Sources */,
@@ -439,7 +471,7 @@
 				CB345336230AE961001A602B /* ResponseProtocol.swift in Sources */,
 				CB34532F230AE960001A602B /* ParameterEncoder.swift in Sources */,
 				CB345330230AE960001A602B /* URLParameterEncoder.swift in Sources */,
-				CB345349230AF078001A602B /* Result.swift in Sources */,
+				CB345349230AF078001A602B /* SearchResultModel.swift in Sources */,
 				CB34533A230AED07001A602B /* StoryboardInstantiable.swift in Sources */,
 				CB3452DF230AB29C001A602B /* AppDelegate.swift in Sources */,
 			);

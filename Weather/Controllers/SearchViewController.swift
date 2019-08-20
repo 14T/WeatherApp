@@ -16,6 +16,9 @@ class SearchViewController: UIViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
 
+    var cities = [SearchResultModel]()
+    var filteredCities = [SearchResultModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
@@ -68,19 +71,30 @@ extension SearchViewController: UISearchBarDelegate {
 
 
     }
-    
-
-    
 }
 
 extension SearchViewController: UISearchResultsUpdating {
     // MARK: - UISearchResultsUpdating Delegate
     func updateSearchResults(for searchController: UISearchController) {
         let searchBar = searchController.searchBar
-
+        searchCity(query: searchBar.text)
     }
-    
+}
 
-    
+//Network Service
+extension SearchViewController {
+
+    func searchCity(query: String?){
+        guard let query = query, !query.isEmpty else{
+            return
+        }
+        
+        let service = SearchCityService()
+        
+        service.searchCity(query: query) { (result, error) in
+            
+            debugPrint("SearchCityService : \(result), error : \(error)")
+        }
+    }
 }
 

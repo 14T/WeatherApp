@@ -23,6 +23,13 @@ public extension NetworkEnvironment {
         }
     }
     
+    var apiKey : String {
+        switch NetworkManager.environment {
+        case .prod:     return "b56811151f8841e096c103034191908"
+        case .develop:  return "b56811151f8841e096c103034191908"
+        }
+    }
+    
     var baseURL: URL {
         guard let url = URL(string: environmentBaseURL) else { fatalError("baseURL not configured.")}
         return url
@@ -64,7 +71,7 @@ public class NetworkManager {
         }
     }
     
-    public func makeRequest(_ request: RequestProtocol, completion: @escaping (_ data: Data?,_ response: Result<String>)->()) {
+    public func makeRequest(_ request: RequestProtocol, completion: @escaping (_ data: Data?,_ response: Result<String>)->()) -> Router{
         let router = Router()
         
         router.request(request) { data, response, error in
@@ -78,7 +85,7 @@ public class NetworkManager {
                 completion(data, result)
             }
         }
-        
+        return router
     }
     
     func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String>{

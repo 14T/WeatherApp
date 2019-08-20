@@ -16,8 +16,11 @@ protocol NetworkRouter: class {
     func cancel()
 }
 
-class Router: NetworkRouter {
+public class Router: NetworkRouter {
     private var task: URLSessionTask?
+    
+    var formatKey = "format"
+    let formatValue = "JSON"
     
     func request(_ route: RequestProtocol, completion: @escaping NetworkRouterCompletion) {
         let session = URLSession.shared
@@ -74,7 +77,7 @@ class Router: NetworkRouter {
             case .requestParameters(let bodyParameters,
                                     let bodyEncoding,
                                     let urlParameters):
-                
+
                 try self.configureParameters(bodyParameters: bodyParameters,
                                              bodyEncoding: bodyEncoding,
                                              urlParameters: urlParameters,
@@ -101,9 +104,15 @@ class Router: NetworkRouter {
                                          bodyEncoding: ParameterEncoding,
                                          urlParameters: Parameters?,
                                          request: inout URLRequest) throws {
+        
+        var urlParametersWithKey = urlParameters
+        urlParametersWithKey?.updateValue(NetworkManager.environment.apiKey, forKey: "key")
+        urlParametersWithKey?.updateValue(formatValue, forKey: formatKey)
+        
+        
         do {
             try bodyEncoding.encode(urlRequest: &request,
-                                    bodyParameters: bodyParameters, urlParameters: urlParameters)
+                                    bodyParameters: bodyParameters, urlParameters: urlParametersWithKey)
         } catch {
             throw error
         }

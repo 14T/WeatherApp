@@ -5,7 +5,7 @@
 //
 
 import Foundation
-struct WeatherUrl : Codable {
+struct WeatherUrlModel : Codable {
 	let value : String?
 
 	enum CodingKeys: String, CodingKey {
