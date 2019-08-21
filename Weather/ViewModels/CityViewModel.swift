@@ -14,11 +14,23 @@ struct CityViewModel {
     public let region : String?
     public let country : String?
 
+
     //MARK: - Init
     init(value: SearchResultModel) {
         self.city = value.areaName?.first?.value
         self.region = value.region?.first?.value
         self.country = value.country?.first?.value
+
+
+    }
+    
+    init(value : City) {
+        self.city = value.name
+        self.region = value.region
+        self.country = value.country
+
+//        self.region = value.region?.first?.value
+//        self.country = value.country?.first?.value
 
     }
 

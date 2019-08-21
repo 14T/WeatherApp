@@ -31,11 +31,15 @@ class CityDetailViewController: UIViewController, StoryboardInstantiable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setUpViews()
         setupNavigationBar()
         getCityDetail(query: viewModel?.cityName)
     }
     
+    func setUpViews(){
+        weatherImageView.layer.cornerRadius = 20
+        weatherImageView.clipsToBounds = true
+    }
 
     private func setupNavigationBar(){
         self.navigationController?.navigationBar.prefersLargeTitles = true
@@ -48,8 +52,15 @@ class CityDetailViewController: UIViewController, StoryboardInstantiable {
         DispatchQueue.main.async {
             self.tempCLabel.text = self.viewModel?.tempCText
             self.humidityLabel.text = self.viewModel?.humidityText
-            self.descLabel.text = self.viewModel?.weatherDesc
-            self.weatherImageView.image = self.viewModel?.weatherIconImage 
+            self.descLabel.text = self.viewModel?.descText
+            
+            //Setting Image with anomation
+            UIView.transition(with: self.weatherImageView,
+                              duration:0.8,
+                              options: .transitionCrossDissolve,
+                              animations: {
+                                self.weatherImageView.image = self.viewModel?.weatherIconImage },
+                              completion: nil)
         }
     }
 }
@@ -57,7 +68,7 @@ class CityDetailViewController: UIViewController, StoryboardInstantiable {
 
 extension CityDetailViewController {
     func getCityDetail(query: String?){
-        
+        self.showLoader()
         guard let query = query else{
             return
         }
@@ -66,16 +77,21 @@ extension CityDetailViewController {
                 return
             }
             self.viewModel = CityDetailViewModel(value: cityDetailBaseModel)
+            self.hideLoader()
             self.getWeatherIcon(path: self.viewModel?.weatherIconUrl)
+            
         }
     }
     
     func getWeatherIcon(path : String?){
+        showLoader()
         guard let path = path else{
             return
         }
         iconService.getProfilePic(path: path) { (image, error) in
             self.viewModel?.weatherIconImage = image
+
+            self.hideLoader()
         }
     }
 }

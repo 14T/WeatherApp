@@ -10,11 +10,11 @@ import Foundation
 
 class SearchCityService {
     var task : Router?
-    var timer:Timer?
+    var timer:Timer? //used for continious typing scenario, disabled for now
     func searchCity(query: String, completion: @escaping (_ results: [SearchResultModel]?, _ error: String?)->()){
         timer?.invalidate()
         //setup timer
-        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: false, block: { (timer) in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.0, repeats: false, block: { (timer) in
             
             self.task?.cancel()
             

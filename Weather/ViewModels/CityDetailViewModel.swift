@@ -46,7 +46,14 @@ struct CityDetailViewModel {
         guard let humidity = humidity else{
             return ""
         }
-        return  "Humidity:" +  humidity
+        return  "Humidity: " +  humidity
+    }
+    
+    public var descText : String {
+        guard let desc = weatherDesc else{
+            return ""
+        }
+        return  "Description: " +  desc
     }
     
 }

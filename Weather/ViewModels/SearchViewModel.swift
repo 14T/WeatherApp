@@ -11,7 +11,6 @@ struct SearchViewModel {
     
     //MARK: - Properties
     public var cities = [CityViewModel]()
-    
 //    //MARK: - Init
     init(values: [SearchResultModel]) {
         cities = values.compactMap({ return  CityViewModel(value: $0) })
