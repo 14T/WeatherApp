@@ -10,25 +10,48 @@ import XCTest
 @testable import Weather
 
 class WeatherTests: XCTestCase {
+    private static let defaultWait = 20.0
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        NetworkManager.shared.isUsingMockData = true
     }
 
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        super.tearDown()
+        
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+    func testSearchCities() {
+      
+        let expectation = self.expectation(description:"\(#function)\(#line)")
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        let service = SearchCityService()
+        service.searchCity(query: "mock") { (cities, error) in
+            XCTAssertNil(error)
+            XCTAssertNotNil(cities)
+            XCTAssertEqual(cities?.count, 5)
+            
+            expectation.fulfill()
         }
+        waitForExpectations(timeout: WeatherTests.defaultWait, handler: nil)
     }
 
+
+    func testCityDetail() {
+        
+        let expectation = self.expectation(description:"\(#function)\(#line)")
+
+        let service = CityDetailService()
+        
+        service.getCityDetail(query: "mock") { (cityDetail, error) in
+            XCTAssertNil(error)
+            XCTAssertNotNil(cityDetail)
+            XCTAssertEqual(cityDetail?.data?.current_condition?.first?.temp_C, "10")
+            
+            expectation.fulfill()
+        }
+        waitForExpectations(timeout: WeatherTests.defaultWait, handler: nil)
+    }
+    
 }
