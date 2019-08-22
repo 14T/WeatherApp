@@ -45,7 +45,8 @@ public enum Result<String>{
 
 public class NetworkManager {
     static let environment : NetworkEnvironment = .develop
-    
+    var isUsingMockData = false
+
     static let shared = NetworkManager()
     private init() {}
     
@@ -55,7 +56,9 @@ public class NetworkManager {
         //TODO: helper method to set base url etc on app launch
     }
     
-    func makeRequest(_ url: URL, completion: @escaping (_ data: Data?,_ response: Result<String>)->()) {
+    func makeRequest(_ url: URL,  completion: @escaping (_ data: Data?,_ response: Result<String>)->()) {
+        
+
         let router = Router()
         
         router.request(url){ data, response, error in
@@ -73,6 +76,13 @@ public class NetworkManager {
     
     public func makeRequest(_ request: RequestProtocol, completion: @escaping (_ data: Data?,_ response: Result<String>)->()) -> Router{
         let router = Router()
+
+        //Using Mock data
+        guard !isUsingMockData else {
+            let data = loadMockJSONFromFile(request: request)
+            completion(data, .success)
+            return router
+        }
         
         router.request(request) { data, response, error in
             debugPrint("Response: \(String(describing: response))")
@@ -98,6 +108,19 @@ public class NetworkManager {
         default: return .failure(NetworkError.failed)
         }
     }
+    
+    func loadMockJSONFromFile(request: RequestProtocol) -> Data? {
+
+        let bundle = Bundle.main
+        guard let path = bundle.path(forResource: request.path, ofType: "json") else {return nil}
+        
+        guard let data = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe) else{
+            return nil
+        }
+        return data
+        
+    }
+    
 
 }
 

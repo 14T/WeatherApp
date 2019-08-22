@@ -37,6 +37,13 @@
 		CB34535E230B9E2A001A602B /* CityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB34535C230B9E2A001A602B /* CityTableViewCell.xib */; };
 		CB345360230BA15B001A602B /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34535F230BA15B001A602B /* CityViewModel.swift */; };
 		CB34536B230BB50E001A602B /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34536A230BB50E001A602B /* SearchViewModel.swift */; };
+		CB6D60DB230E58D400B4FE04 /* search.ashx.json in Resources */ = {isa = PBXBuildFile; fileRef = CB6D60DA230E58D300B4FE04 /* search.ashx.json */; };
+		CB6D60DC230E5C8600B4FE04 /* search.ashx.json in Resources */ = {isa = PBXBuildFile; fileRef = CB6D60DA230E58D300B4FE04 /* search.ashx.json */; };
+		CB6D60DD230E5E0A00B4FE04 /* search.ashx.json in Resources */ = {isa = PBXBuildFile; fileRef = CB6D60DA230E58D300B4FE04 /* search.ashx.json */; };
+		CB6D60E8230E745C00B4FE04 /* weather.ashx.json in Resources */ = {isa = PBXBuildFile; fileRef = CB6D60E7230E745C00B4FE04 /* weather.ashx.json */; };
+		CB6D60E9230E746C00B4FE04 /* weather.ashx.json in Resources */ = {isa = PBXBuildFile; fileRef = CB6D60E7230E745C00B4FE04 /* weather.ashx.json */; };
+		CB6D60EA230E74EF00B4FE04 /* weather.ashx.json in Resources */ = {isa = PBXBuildFile; fileRef = CB6D60E7230E745C00B4FE04 /* weather.ashx.json */; };
+		CB6D60ED230E763400B4FE04 /* CityStoreCoreDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB6D60EC230E763400B4FE04 /* CityStoreCoreDataTests.swift */; };
 		CBA12156230BED1100068908 /* CityDetailStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA12155230BED1100068908 /* CityDetailStoryboard.storyboard */; };
 		CBA12158230BED3B00068908 /* CityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA12157230BED3B00068908 /* CityDetailViewController.swift */; };
 		CBA12165230BF0BA00068908 /* CityDetailHourlyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA1215A230BF0B900068908 /* CityDetailHourlyModel.swift */; };
@@ -116,6 +123,9 @@
 		CB34535C230B9E2A001A602B /* CityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityTableViewCell.xib; sourceTree = "<group>"; };
 		CB34535F230BA15B001A602B /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
 		CB34536A230BB50E001A602B /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		CB6D60DA230E58D300B4FE04 /* search.ashx.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = search.ashx.json; sourceTree = "<group>"; };
+		CB6D60E7230E745C00B4FE04 /* weather.ashx.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weather.ashx.json; sourceTree = "<group>"; };
+		CB6D60EC230E763400B4FE04 /* CityStoreCoreDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityStoreCoreDataTests.swift; sourceTree = "<group>"; };
 		CBA12155230BED1100068908 /* CityDetailStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CityDetailStoryboard.storyboard; sourceTree = "<group>"; };
 		CBA12157230BED3B00068908 /* CityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailViewController.swift; sourceTree = "<group>"; };
 		CBA1215A230BF0B900068908 /* CityDetailHourlyModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityDetailHourlyModel.swift; sourceTree = "<group>"; };
@@ -206,7 +216,9 @@
 		CB3452F2230AB29F001A602B /* WeatherTests */ = {
 			isa = PBXGroup;
 			children = (
+				CB6D60D9230E57E900B4FE04 /* TestData */,
 				CB3452F3230AB29F001A602B /* WeatherTests.swift */,
+				CB6D60EC230E763400B4FE04 /* CityStoreCoreDataTests.swift */,
 				CB3452F5230AB29F001A602B /* Info.plist */,
 			);
 			path = WeatherTests;
@@ -385,6 +397,15 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		CB6D60D9230E57E900B4FE04 /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				CB6D60E7230E745C00B4FE04 /* weather.ashx.json */,
+				CB6D60DA230E58D300B4FE04 /* search.ashx.json */,
+			);
+			path = TestData;
+			sourceTree = "<group>";
+		};
 		CBA12159230BF0A700068908 /* CityDetailModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -546,9 +567,11 @@
 			files = (
 				CB3452E9230AB29F001A602B /* LaunchScreen.storyboard in Resources */,
 				CB3452E6230AB29F001A602B /* Assets.xcassets in Resources */,
+				CB6D60DC230E5C8600B4FE04 /* search.ashx.json in Resources */,
 				CBA12156230BED1100068908 /* CityDetailStoryboard.storyboard in Resources */,
 				CB34535E230B9E2A001A602B /* CityTableViewCell.xib in Resources */,
 				CB3452E4230AB29C001A602B /* Main.storyboard in Resources */,
+				CB6D60EA230E74EF00B4FE04 /* weather.ashx.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,6 +579,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB6D60DB230E58D400B4FE04 /* search.ashx.json in Resources */,
+				CB6D60E8230E745C00B4FE04 /* weather.ashx.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,6 +588,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB6D60E9230E746C00B4FE04 /* weather.ashx.json in Resources */,
+				CB6D60DD230E5E0A00B4FE04 /* search.ashx.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,6 +653,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB6D60ED230E763400B4FE04 /* CityStoreCoreDataTests.swift in Sources */,
 				CB3452F4230AB29F001A602B /* WeatherTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -833,6 +861,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D4GDUVD762;
 				INFOPLIST_FILE = WeatherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -853,6 +882,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D4GDUVD762;
 				INFOPLIST_FILE = WeatherTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -872,6 +902,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D4GDUVD762;
 				INFOPLIST_FILE = WeatherUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -891,6 +922,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D4GDUVD762;
 				INFOPLIST_FILE = WeatherUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

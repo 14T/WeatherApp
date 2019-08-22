@@ -34,6 +34,11 @@ class SearchViewController: UIViewController {
         setupSearchController()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.contentInset = UIEdgeInsets(top: 1, left: 0, bottom: 0, right: 0)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
@@ -56,9 +61,9 @@ class SearchViewController: UIViewController {
     private func setupNavigationBar(){
         self.title = "Weather"
         self.navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.largeTitleDisplayMode = .always
+        navigationItem.largeTitleDisplayMode = .automatic
         navigationItem.hidesSearchBarWhenScrolling = false
-        
+
     }
     private func setupSearchController(){
         // Setup the Search Controller
@@ -129,6 +134,11 @@ extension SearchViewController {
         service.searchCity(query: query) { (result, error) in
             guard let result = result else {
                 debugPrint("SearchCityService: EMPTY")
+                
+                DispatchQueue.main.async {
+                    self.navigationItem.prompt = "No Result"
+                }
+                self.hideLoader()
                 return
             }
             self.viewModel = SearchViewModel(values: result)

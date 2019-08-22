@@ -44,7 +44,8 @@ class CityStore: NSObject {
     }
     
     public var lastTenCity: [City] {
-        return Array(self.cities.prefix(upTo: 10))
+        let maxCount = self.cities.count > 10 ? 10 : self.cities.count
+        return Array(self.cities.prefix(upTo: maxCount))
     }
     
     override init() {
@@ -84,6 +85,15 @@ class CityStore: NSObject {
             saveChanges()
         }
         
+    }
+    
+    func deleteAll(){
+        /*get reference of managed object context*/
+        let managedContext = persistenceManager.managedObjectContext
+        
+        for item in cities{
+            managedContext.delete(item)
+        }
     }
     
     // MARK: Private Methods

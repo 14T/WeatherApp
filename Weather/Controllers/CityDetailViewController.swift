@@ -50,9 +50,9 @@ class CityDetailViewController: UIViewController, StoryboardInstantiable {
     
     func updateViews(){
         DispatchQueue.main.async {
-            self.tempCLabel.text = self.viewModel?.tempCText
-            self.humidityLabel.text = self.viewModel?.humidityText
-            self.descLabel.text = self.viewModel?.descText
+            self.tempCLabel.text = self.viewModel?.tempCFormattedText
+            self.humidityLabel.text = self.viewModel?.humidityFormattedText
+            self.descLabel.text = self.viewModel?.descFormattedText
             
             //Setting Image with anomation
             UIView.transition(with: self.weatherImageView,
@@ -74,6 +74,7 @@ extension CityDetailViewController {
         }
         service.getCityDetail(query: query) { (cityDetailBaseModel, error) in
             guard let cityDetailBaseModel = cityDetailBaseModel else{
+                self.hideLoader()
                 return
             }
             self.viewModel = CityDetailViewModel(value: cityDetailBaseModel)
@@ -86,6 +87,7 @@ extension CityDetailViewController {
     func getWeatherIcon(path : String?){
         showLoader()
         guard let path = path else{
+            self.hideLoader()
             return
         }
         iconService.getProfilePic(path: path) { (image, error) in

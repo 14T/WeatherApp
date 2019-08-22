@@ -35,21 +35,25 @@ struct CityDetailViewModel {
         cityName = value.city
     }
     
-    public var tempCText : String {
+  
+}
+
+extension CityDetailViewModel {
+    public var tempCFormattedText : String {
         guard let tempC = tempC else{
             return ""
         }
         return   tempC + "º"
     }
     
-    public var humidityText : String {
+    public var humidityFormattedText : String {
         guard let humidity = humidity else{
             return ""
         }
         return  "Humidity: " +  humidity
     }
     
-    public var descText : String {
+    public var descFormattedText : String {
         guard let desc = weatherDesc else{
             return ""
         }
