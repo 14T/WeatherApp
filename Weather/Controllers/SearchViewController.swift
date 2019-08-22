@@ -136,7 +136,7 @@ extension SearchViewController {
                 debugPrint("SearchCityService: EMPTY")
                 
                 DispatchQueue.main.async {
-                    self.navigationItem.prompt = "No Result"
+//                    self.navigationItem.prompt = "No Result"
                 }
                 self.hideLoader()
                 return
