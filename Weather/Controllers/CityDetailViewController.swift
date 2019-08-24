@@ -37,6 +37,11 @@ class CityDetailViewController: UIViewController, StoryboardInstantiable {
     }
     
     func setUpViews(){
+        self.tempCLabel.text = nil
+        self.humidityLabel.text = nil
+        self.descLabel.text = nil
+        self.weatherImageView.image = nil
+        
         weatherImageView.layer.cornerRadius = 20
         weatherImageView.clipsToBounds = true
     }
@@ -50,16 +55,19 @@ class CityDetailViewController: UIViewController, StoryboardInstantiable {
     
     func updateViews(){
         DispatchQueue.main.async {
-            self.tempCLabel.text = self.viewModel?.tempCFormattedText
-            self.humidityLabel.text = self.viewModel?.humidityFormattedText
-            self.descLabel.text = self.viewModel?.descFormattedText
-            
+           
             //Setting Image with anomation
-            UIView.transition(with: self.weatherImageView,
+            UIView.transition(with: self.view,
                               duration:0.8,
                               options: .transitionCrossDissolve,
                               animations: {
+                                
+                                self.tempCLabel.text = self.viewModel?.tempCFormattedText
+                                self.humidityLabel.text = self.viewModel?.humidityFormattedText
+                                self.descLabel.text = self.viewModel?.descFormattedText
+                                
                                 self.weatherImageView.image = self.viewModel?.weatherIconImage },
+                              
                               completion: nil)
         }
     }
