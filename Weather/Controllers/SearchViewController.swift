@@ -28,24 +28,21 @@ class SearchViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupTableView()
         setupNavigationBar()
         setupSearchController()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.contentInset = UIEdgeInsets(top: 1, left: 0, bottom: 0, right: 0)
+        self.navigationItem.hidesSearchBarWhenScrolling = false
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-        //            self.searchController.isActive = true
-        //        }
-        
-        tableView.reloadData()
+        self.tableView.reloadData()
+        self.navigationItem.hidesSearchBarWhenScrolling = true
         
     }
     
@@ -62,7 +59,7 @@ class SearchViewController: UIViewController {
         self.title = "Weather"
         self.navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .automatic
-        navigationItem.hidesSearchBarWhenScrolling = false
+//        navigationItem.hidesSearchBarWhenScrolling = false
 
     }
     private func setupSearchController(){
