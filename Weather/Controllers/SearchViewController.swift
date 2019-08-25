@@ -85,6 +85,17 @@ class SearchViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
+    
+    func showError(value : Bool){
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30))
+        label.text = "No Results"
+        label.textAlignment = .center
+        label.textColor = UIColor.lightGray
+        label.font = UIFont.systemFont(ofSize: 14)
+        DispatchQueue.main.async {
+            self.tableView.backgroundView = (value) ? label : nil
+        }
+    }
 }
 
 // MARK: - SearchController delegates
@@ -134,15 +145,11 @@ extension SearchViewController {
         service.searchCity(query: query) { (result, error) in
             guard let result = result else {
                 debugPrint("SearchCityService: EMPTY")
-                
-                DispatchQueue.main.async {
-//                    self.navigationItem.prompt = "No Result"
-                }
                 self.hideLoader()
                 return
             }
-            self.viewModel = SearchViewModel(values: result)
             self.hideLoader()
+            self.viewModel = SearchViewModel(values: result)
             debugPrint("SearchCityService : \(result), error : \(error ?? "")")
         }
     }
@@ -189,6 +196,18 @@ extension SearchViewController: UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
+        if searchController.isActive {
+            if viewModel?.cities.count ?? 0 > 0{
+                showError(value: false)
+                return 1
+            }
+        }
+        else if cityStore.lastTenCity.count > 0 {
+            showError(value: false)
+            return 1
+        }
+        
+        showError(value: true)
         return 1
     }
     

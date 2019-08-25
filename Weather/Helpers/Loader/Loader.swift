@@ -10,6 +10,16 @@ import Foundation
 import UIKit
 
 extension UIViewController {
+    var isShowingLoader : Bool {
+        guard let window = UIApplication.shared.keyWindow else {
+            return false
+        }
+        if let loaderView = window.subviews.first(where: { $0 is LoaderView })  as? LoaderView {
+            return true
+        }
+        return false
+    }
+    
     func showLoader() {
         DispatchQueue.main.async {
             
