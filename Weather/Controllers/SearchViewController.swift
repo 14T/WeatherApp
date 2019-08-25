@@ -187,7 +187,7 @@ extension SearchViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         guard searchController.isActive else {
-            return "Last Viewed"
+            return "Recently Viewed"
         }
         return "Search Results"
     }
