@@ -10,6 +10,16 @@ import Foundation
 import UIKit
 
 extension UIViewController {
+    var isShowingLoader : Bool {
+        guard let window = UIApplication.shared.keyWindow else {
+            return false
+        }
+        if let loaderView = window.subviews.first(where: { $0 is LoaderView })  as? LoaderView {
+            return true
+        }
+        return false
+    }
+    
     func showLoader() {
         DispatchQueue.main.async {
             
@@ -26,8 +36,9 @@ extension UIViewController {
             guard let window = UIApplication.shared.keyWindow else {
                 return
             }
-            if let loaderView = window.subviews.first(where: { $0 is LoaderView }) {
-                loaderView.removeFromSuperview()
+            if let loaderView = window.subviews.first(where: { $0 is LoaderView })  as? LoaderView {
+//                loaderView.removeFromSuperview()
+                loaderView.removeLoaderView()
             }
         }
     }
@@ -38,7 +49,6 @@ class LoaderView: UIView {
     
     var blurEffectView: UIVisualEffectView?
     var width : CGFloat = 80
-    
     override init(frame: CGRect) {
         
         super.init(frame: frame)
@@ -53,8 +63,26 @@ class LoaderView: UIView {
         blurEffectView.center = self.center
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.blurEffectView = blurEffectView
+        self.alpha = 0.0
         addSubview(blurEffectView)
+        
+        UIViewPropertyAnimator(duration: 0.2, curve: .easeInOut, animations: {
+            self.alpha = 1.0
+        }).startAnimation()
+        
+        
         addLoader()
+    }
+    
+    func removeLoaderView(){
+        let fadeinAnimation =   UIViewPropertyAnimator.init(duration: 0.2, curve: UIView.AnimationCurve.easeInOut) {
+            self.alpha = 0.0
+        }
+        fadeinAnimation.startAnimation()
+        
+        fadeinAnimation.addCompletion { [unowned self] _ in
+            self.removeFromSuperview()
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
